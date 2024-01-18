@@ -1,0 +1,24 @@
+[package]
+name = "lokker"
+version = "0.1.0"
+edition = "2021"
+description = "Lokker is a simple logger"
+authors = ["Kleinmarb <kleinmarb@skiff.com>"]
+categories = ["development-tools::debugging"]
+keywords = ["logger", "simple"]
+rust-version = "1.75.0"
+documentation = "https://docs.rs/lokker"
+homepage = "https://github.com/kleinmarb/lokker"
+repository = "https://github.com/kleinmarb/lokker"
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+log = { version = "0.4.20", features = ["std"] }
+
+[profile.release]
+opt-level = 3
+debug = false
+lto = "fat"
+incremental = false
+codegen-units = 1
