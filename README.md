@@ -1,7 +1,6 @@
 # Lokker
 
-Lokker is a simple logger which focuses on simplicity, 
-it's the default logger for the [byzantium libDBMS](https://docs.rs/byzantium/*/byzantium/).
+Lokker is a simple logger which focuses on simplicity.
 
 ## License
 
