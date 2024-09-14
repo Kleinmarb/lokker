@@ -1,12 +1,12 @@
 [package]
 name = "lokker"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Lokker is a simple logger"
 authors = ["Kleinmarb <kleinmarb@skiff.com>"]
 categories = ["development-tools::debugging"]
 keywords = ["logger", "simple"]
-rust-version = "1.75.0"
+rust-version = "1.80.0"
 documentation = "https://docs.rs/lokker"
 homepage = "https://github.com/kleinmarb/lokker"
 repository = "https://github.com/kleinmarb/lokker"
