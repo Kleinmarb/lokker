@@ -14,6 +14,7 @@
 //! It is this simple since the default for byzantium should be easy-to-use.
 //! You can still use your own logger that is compatible with the [log crate](https://docs.rs/log/*/log/).
 
+#[cfg(feature= "time")]
 pub(crate) mod time;
 
 use log::{LevelFilter, Log, Metadata, Record, SetLoggerError};
@@ -82,7 +83,8 @@ impl Log for Logger {
     fn enabled(&self, _: &Metadata) -> bool {
         true
     }
-
+    
+    #[cfg(feature = "time")]
     fn log(&self, record: &Record) {
         let (hour, minute, second) = time::utc_now();
 
@@ -94,6 +96,11 @@ impl Log for Logger {
         );
 
         println!("{} [{}] {}", formatted_time, record.level(), record.args());
+    }
+
+    #[cfg(not(feature = "time"))]
+    fn log(&self, record: &Record) {
+    printing!("[{}] {}", record.level(), record.args());
     }
 
     fn flush(&self) {}
