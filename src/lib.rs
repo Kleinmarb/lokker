@@ -87,15 +87,13 @@ impl Log for Logger {
         let (hour, minute, second) = time::utc_now();
 
         let formatted_time = format!(
-            "{:02}:{:02}:{:02}",
+            "{}:{}:{}",
             hour,
             minute,
             second,
         );
 
-        let message = format!("{} [{}] {}", formatted_time, record.level(), record.args());
-
-        println!("{}", message);
+        println!("{} [{}] {}", formatted_time, record.level(), record.args());
     }
 
     fn flush(&self) {}
