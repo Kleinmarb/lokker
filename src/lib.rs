@@ -100,7 +100,7 @@ impl Log for Logger {
 
     #[cfg(not(feature = "time"))]
     fn log(&self, record: &Record) {
-    printing!("[{}] {}", record.level(), record.args());
+    println!("[{}] {}", record.level(), record.args());
     }
 
     fn flush(&self) {}
